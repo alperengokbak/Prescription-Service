@@ -1,3 +1,3 @@
-const allowedOrigins = ["http://localhost:5173"];
+const allowedOrigins = ["https://prescription-api-gateway.onrender.com, https://prescription-frontend.onrender.com/"];
 
 export { allowedOrigins };
