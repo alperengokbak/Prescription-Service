@@ -124,7 +124,6 @@ async function checkPharmacy(req, res) {
       return res.status(401).json({ error: "Not authorized" });
     }
   } catch (error) {
-    console.log("gdgf", res.rows);
     console.log(error);
     return res.status(401).json({ error: "Not authorized" });
   } finally {
