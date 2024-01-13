@@ -8,6 +8,8 @@ export const sendToRabbitMQ = async (message) => {
     const connection = await amqp.connect(
       `amqp://${process.env.RABBITMQ_DEFAULT_USER}:${process.env.RABBITMQ_DEFAULT_PASS}@${process.env.RABBITMQ_HOST}:${process.env.RABBITMQ_PORT}/?heartbeat=60&connection_timeout=30000&rabbitmq_erlang_cookie=${process.env.RABBITMQ_ERLANG_COOKIE}`
     );
+    console.log(connection);
+
     const channel = await connection.createChannel();
 
     // Declare the exchange and queue
