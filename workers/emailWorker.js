@@ -1,8 +1,13 @@
 import amqp from "amqplib";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const sendToRabbitMQ = async (message) => {
   try {
-    const connection = await amqp.connect("amqp://localhost");
+    const connection = await amqp.connect(
+      `amqp://${process.env.RABBITMQ_DEFAULT_USER}:${process.env.RABBITMQ_DEFAULT_PASS}${process.env.RABBITMQ_HOST}`
+    );
     const channel = await connection.createChannel();
 
     // Declare the exchange and queue

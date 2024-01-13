@@ -229,7 +229,7 @@ async function createPrescription(req, res) {
 
     await sendToRabbitMQ(message);
 
-    return res.json(prescription);
+    return res.json({ prescription, message: "Prescription created successfully, email sent!" });
   } catch (error) {
     console.log(error);
     res.json({ error: "Error encountered while creating prescription" });
