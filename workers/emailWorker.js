@@ -6,7 +6,7 @@ dotenv.config();
 export const sendToRabbitMQ = async (message) => {
   try {
     const connection = await amqp.connect(
-      `amqp://${process.env.RABBITMQ_DEFAULT_USER}:${process.env.RABBITMQ_DEFAULT_PASS}@${process.env.RABBITMQ_HOST}`
+      `amqp://${process.env.RABBITMQ_DEFAULT_USER}:${process.env.RABBITMQ_DEFAULT_PASS}@${process.env.RABBITMQ_HOST}:${process.env.RABBITMQ_PORT}`
     );
     const channel = await connection.createChannel();
 
