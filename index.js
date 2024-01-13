@@ -10,7 +10,7 @@ import { corsOptions } from "./config/corsOptions.js";
 const app = express();
 const PORT = 3002;
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 app.use("/medicine", medicineRoute);
