@@ -1,9 +1,8 @@
 import { PrismaClient } from "@prisma/client";
-import XLSX from "xlsx";
 
 const prisma = new PrismaClient();
 
-async function addMedicineFromExcel(fileBuffer) {
+/* async function addMedicineFromExcel(fileBuffer) {
   try {
     const workbook = XLSX.read(fileBuffer, { type: "buffer" });
     const sheetName = workbook.SheetNames[0];
@@ -47,7 +46,7 @@ async function addMedicineFromExcel(fileBuffer) {
   } finally {
     await prisma.$disconnect();
   }
-}
+} */
 
 async function addMedicine(req, res) {
   const { name, price } = req.body;
